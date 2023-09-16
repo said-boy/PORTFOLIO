@@ -5,4 +5,4 @@ theme
 rest_api/settings
 Dockerfile
 docker-compose.yaml
-.dockerignore
+# .dockerignore
