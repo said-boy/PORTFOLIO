@@ -1,0 +1,7 @@
+data
+.env
+media
+theme
+rest_api/settings
+docker-compose.yml
+.dockerignore

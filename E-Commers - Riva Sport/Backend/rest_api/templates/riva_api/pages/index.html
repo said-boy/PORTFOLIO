@@ -1,0 +1,22 @@
+{% extends 'riva_api/base.html' %}
+{% block content %}
+
+<div class="text-center h-screen">
+    
+    {% include 'riva_api/components/_welcome.html' %}  
+    
+    {% include 'riva_api/components/_button_start.html' %}
+      
+    <div class="mt-64 mb-52 pt-5 px-4 grid grid-flow-col place-content-around gap-5">
+        
+        {% include 'riva_api/components/_button_docs.html' %}
+        
+        {% include 'riva_api/components/_button_app.html' %}
+
+        {% include 'riva_api/components/_button_repo.html' %}
+        
+    </div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+version: '3.10'
+
+services:
+  db:
+    container_name: riva-api-db
+    image: postgres:latest
+    volumes: 
+      - ./data/db:/var/lib/postgresql/data/
+    restart: always
+    environment:
+      - POSTGRES_DB=api
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    
+  app:
+    container_name: riva-api
+    command: sh -c "python manage.prod.py migrate && python manage.prod.py runserver 0.0.0.0:8000"
+    build: 
+      context: "."
+      dockerfile: Dockerfile
+    image: riva-api
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=3orfocu01r2!hjh8@=4e%*vccxb8oh8d5p&zh=$^9z=qli!d4_saidboy
+      - POSTGRES_DB=api
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
