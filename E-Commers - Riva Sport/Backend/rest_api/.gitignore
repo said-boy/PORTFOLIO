@@ -3,4 +3,4 @@ data
 media
 theme
 rest_api/settings
-docker-compose.yml
+docker-compose.yaml
