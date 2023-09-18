@@ -70,6 +70,34 @@ $ ./manage.py runserver
 ```
 11. instalasi selesai.
 
+## Dockerizing Aplikasi Anda
+1. copy docker compose
+```sh
+$ cp docker-compose.example.yaml docker-compose.yaml
+```
+2. ubah environment yang akan ditetapkan dalam docker
+```yaml
+      ...
+
+environment:
+      - POSTGRES_DB=ubah_menjadi_nama_database_anda
+      - POSTGRES_USER=ubah_menjadi_user_database_anda
+      - POSTGRES_PASSWORD=ubah_menjadi_password_database_anda
+      ...
+
+environment:
+      - SECRET_KEY=ubah_menjadi_secret_key__anda
+      - POSTGRES_DB=aubah_menjadi_nama_database_andapi
+      - POSTGRES_USER=ubah_menjadi_user_database_anda
+      - POSTGRES_PASSWORD=postgres
+```
+3. jalankan docker nya
+```sh
+$ sudo docker compose up
+```
+4. kunjungi [http://localhost:9001/](http://localhost:9001/) anda.
+5. selesai.
+   
 ## Dokumentasi Penggunaan
 Menggunakan Riva API: Pelajari cara menggunakan API ini dengan mengunjungi [dokumentasi penggunaan](http://localhost:9000/docs).
 
