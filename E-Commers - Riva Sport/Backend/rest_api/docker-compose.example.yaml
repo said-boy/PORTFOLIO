@@ -27,7 +27,7 @@ services:
       - SECRET_KEY=ubah_menjadi_secret_key__anda
       - POSTGRES_DB=aubah_menjadi_nama_database_andapi
       - POSTGRES_USER=ubah_menjadi_user_database_anda
-      - POSTGRES_PASSWORD=ubah_menjadi_password_database_anda
+      - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
     
