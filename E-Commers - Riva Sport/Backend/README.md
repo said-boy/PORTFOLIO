@@ -12,7 +12,10 @@ Selamat datang di Riva API, platform backend open source yang dirancang khusus u
 
 install dengan perintah : <br>
 
-``` $ git clone https://github.com/said-boy/Projects/tree/fc7109d0e5e5836ade99a26de3d80cf642eaccb2/E-Commers%20-%20Riva%20Sport/Backend ```
+```sh
+ $ git clone https://github.com/said-boy/Projects.git 
+
+```
 
 Menggunakan Riva API: Pelajari cara menggunakan API ini dengan mengunjungi dokumentasi penggunaan.
 
