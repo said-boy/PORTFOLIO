@@ -1,6 +1,6 @@
 data
 .env
 media
-theme
-rest_api/settings
+rest_api/settings/prod.py
+manage.prod.py
 docker-compose.yaml
