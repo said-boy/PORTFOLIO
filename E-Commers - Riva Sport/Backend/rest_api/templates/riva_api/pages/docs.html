@@ -1,0 +1,167 @@
+{% extends 'riva_api/base.html' %}
+{% block content %}
+
+<div class="grid grid-cols-5">
+    <div class="drawer lg:drawer-open col-start-5 lg:col-start-1 overflow-x-hidden z-50">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col items-end justify-center fixed top-3 right-3">
+            <!-- Page content here -->
+            <label for="my-drawer-2" class="btn btn-accent drawer-button lg:hidden text-gray-900">Menu</label>
+        </div>
+        <div class="drawer-side">
+            <label for="my-drawer-2" class="drawer-overlay"></label>
+            <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                <!-- Sidebar content here -->
+                <li><a>Item 1</a></li>
+                <li>
+                    <details open>
+                        <summary>Api Reference</summary>
+                        <ul>
+                            <li><a>Register</a></li>
+                            <li><a>Login</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a>Item 3</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container py-10 px-5 col-span-5 lg:col-start-2 overflow-scroll h-screen remove-scrollbar">
+        <h1 class="text-4xl text-white">Riva Sport Api</h1>
+        <h5 class="text-yellow-500 mt-1">V. 1.0.0</h5>
+        <h1 class="text-3xl mt-7 mb-3 text-white">API Root</h1>
+        <blockquote class="text-base-content mb-3 tracking-wide leading-6">adalah titik awal atau endpoint utama dari sebuah aplikasi REST API.
+            Ini
+            adalah URL utama yang digunakan untuk mengakses semua
+            sumber daya dan layanan dalam API Anda. API root biasanya digunakan sebagai basis untuk semua permintaan
+            API.</blockquote>
+        <hr class="opacity-40">
+        <!-- /api/ -->
+        <ul class="menu min-w-fit text-xl -mx-5">
+            <li>
+                <details open>
+                    <summary class="grid grid-col-2 grid-row-3">
+                        <blockquote>
+                            Daftar Api Root
+                        </blockquote>
+                        <blockquote class="row-start-2">
+                            <span class="text-pink-400 font-bold">GET</span><span class="ml-3 text-yellow-500">/api/</span>
+                        </blockquote>
+                        <blockquote class="row-start-3 text-base">
+                            Mendapatkan semua data
+                        </blockquote>
+                    </summary>
+                    <div class="container mt-5 px-3">
+                        <span>Respon Sukses</span>
+                        <hr class="opacity-40 mt-2 mb-5">
+                        <span class="text-white">HTTP Status 200 - Ok</span>
+                        <p class="mt-2 mb-8 text-base leading-6">API root mengembalikan data yang sah dan tidak memerlukan autentikasi.
+                        </p>
+                        <hr class="opacity-40 mb-5">
+                    </div>
+            </li>
+        </ul>
+        <!--  -->
+        <h1 class="text-3xl mt-7 mb-3 text-white">Pendaftaran</h1>
+        <blockquote class="text-base-content mb-3">
+            Pendaftaran akun dalam konteks aplikasi REST API adalah langkah kunci dalam memulai penggunaan platform kami yang
+            inovatif. Melalui proses pendaftaran ini, pengguna dapat memperoleh akses eksklusif ke berbagai sumber daya dan layanan
+            yang kami tawarkan, membuka pintu untuk berbagai peluang integrasi dan berinteraksi dengan API kami secara efisien.
+        </blockquote>
+        <hr class="opacity-40">
+        <ul class="menu min-w-fit text-xl -mx-5 mb-5">
+            <li>
+                <details open>
+                    <summary class="grid grid-col-2 grid-row-3">
+                        <blockquote>
+                            Pendaftaran Akun
+                        </blockquote>
+                        <blockquote class="row-start-2">
+                            <span class="text-pink-400 font-bold">POST</span><span class="ml-3 text-yellow-500">/api/account/register/</span>
+                        </blockquote>
+                        <blockquote class="row-start-3 text-base mt-2">
+                            Mendaftarkan akun user sesuai dengan data yang user kirimkan melalui parameter
+                        </blockquote>
+                    </summary>
+                    <div class="container mt-5 px-3">
+                        <span>Parameter Query</span>
+                        <hr class="opacity-40 mt-2 mb-5">
+                        <div class="flex justify-between">
+                            <span class="text-white bg-pink-900 border-2 border-pink-500 px-2 rounded-sm text-base">first_name</span>
+                            <span class="text-sm self-center -ml-24">REQUIRED</span>
+                            <span class="text-white text-base self-center justify-items-end"><span class="text-base-content mr-1">TYPE</span>string</span>
+                        </div>
+                        <p class="mt-3 text-base leading-5">
+                            Berisi nama depan anda
+                        </p>
+                        <hr class="opacity-40 mt-4 mb-5">
+                        <div class="flex justify-between">
+                            <span class="text-white bg-pink-900 border-2 border-pink-500 px-2 rounded-sm text-base">last_name</span>
+                            <span class="text-sm self-center -ml-24">REQUIRED</span>
+                            <span class="text-white text-base self-center justify-items-end"><span class="text-base-content mr-1">TYPE</span>string</span>
+                        </div>
+                        <p class="mt-3 text-base leading-5">
+                            Berisi nama belakang anda
+                        </p>
+                        <hr class="opacity-40 mt-4 mb-5">
+                        <p class="mt-3 text-base leading-5">
+                            <span class="text-yellow-400">Note</span> : Terkadang anda harus mengganti kombinasi nama depan dan belakang, karena nama mungkin sudah digunakan oleh orang lain.
+                        </p>
+                        <hr class="opacity-40 mt-4 mb-5">
+                        <div class="flex justify-between">
+                            <span class="text-white bg-pink-900 border-2 border-pink-500 px-2 rounded-sm text-base">email</span>
+                            <span class="text-sm self-center -ml-32">REQUIRED</span>
+                            <span class="text-white text-base self-center justify-items-end"><span class="text-base-content mr-1">TYPE</span>email</span>
+                        </div>
+                        <p class="mt-3 text-base leading-5">
+                            Berisi email anda
+                        </p>
+                        <hr class="opacity-40 mt-4 mb-5">
+                        <div class="flex justify-between">
+                            <span class="text-white bg-pink-900 border-2 border-pink-500 px-2 rounded-sm text-base">username</span>
+                            <span class="text-sm self-center -ml-24">REQUIRED</span>
+                            <span class="text-white text-base self-center justify-items-end"><span class="text-base-content mr-1">TYPE</span>string</span>
+                        </div>
+                        <p class="mt-3 text-base leading-5">
+                            Berisi Username untuk akun anda
+                        </p>
+                        <hr class="opacity-40 mt-4 mb-5">
+                        <p class="mt-3 text-base leading-5">
+                            <span class="text-yellow-400 text-base">Note</span> : Pastikan username yang anda masukkan UNIQUE
+                        </p>
+                        <hr class="opacity-40 mt-4 mb-5">
+                        <div class="flex justify-between">
+                            <span class="text-white bg-pink-900 border-2 border-pink-500 px-2 rounded-sm text-base">password</span>
+                            <span class="text-sm self-center -ml-24">REQUIRED</span>
+                            <span class="text-white text-base self-center justify-items-end"><span
+                                    class="text-base-content mr-1">TYPE</span>string</span>
+                        </div>
+                        <p class="mt-3 text-base leading-5">
+                            Berisi password untuk akun anda
+                        </p>
+                        <hr class="opacity-40 mt-4 mb-5">
+                        <div class="flex justify-between">
+                            <span class="text-white bg-pink-900 border-2 border-pink-500 px-2 rounded-sm text-base">password2</span>
+                            <span class="text-sm self-center -ml-24">REQUIRED</span>
+                            <span class="text-white text-base self-center justify-items-end"><span
+                                    class="text-base-content mr-1">TYPE</span>string</span>
+                        </div>
+                        <p class="mt-3 text-base leading-5">
+                            Berisi verifikasi dari password yang anda masukkan. Pastikan isi dari password2 sama dengan password.
+                        </p>
+                    </div>
+                    <div class="container mt-10 px-3">
+                        <span>Respon Sukses</span>
+                        <hr class="opacity-40 mt-2 mb-5">
+                        <span class="text-white">HTTP Status 201 - Created</span>
+                        <p class="mt-2 text-base leading-5">Pendaftaran mengembalikan data berupa informasi akun yang telah berhasil dibuat.
+                        </p>
+                    </div>
+            </li>
+        </ul>
+    </div>
+    </details>
+</div>
+</div>
+{% endblock content %}

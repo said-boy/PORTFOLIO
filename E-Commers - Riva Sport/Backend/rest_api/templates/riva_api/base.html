@@ -1,4 +1,4 @@
-{% comment %} {% load static tailwind_css %} {% endcomment %}
+{% load static tailwind_tags %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,11 +8,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" href="{% static 'css/vanila.css' %}">
-		<link rel="stylesheet" href="{% static 'css/dist/styles.css' %}">
-		{% comment %} {% tailwind_css %} {% endcomment %}
+		{% comment %} <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}"> {% endcomment %}
+		{% tailwind_css %}
 	</head>
 
-	<body class="bg-gray-400/50 font-serif leading-normal tracking-normal">
+	<body class="font-serif leading-normal tracking-normal">
 		{% block content %}
 		{% endblock content %}
 	</body>
